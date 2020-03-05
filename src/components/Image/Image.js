@@ -32,7 +32,7 @@ const Image = ({ imgName }) => (
 )
 
 Image.propTypes = {
-  imgName: PropTypes.string.isRequired,
+  imgName: PropTypes.string.isRequired
 }
 
 export default Image
