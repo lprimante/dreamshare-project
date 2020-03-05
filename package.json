@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Luciana Primante <lprimante@gmail.com>",
   "dependencies": {
+    "@material-ui/core": "^4.9.5",
     "@material-ui/icons": "^4.9.1",
     "gatsby": "^2.19.7",
     "gatsby-image": "^2.2.39",
@@ -15,13 +16,23 @@
     "gatsby-source-filesystem": "^2.1.46",
     "gatsby-transformer-sharp": "^2.3.13",
     "prop-types": "^15.7.2",
+    "pure-react-carousel": "^1.25.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
     "styled-components": "^5.0.1"
   },
   "devDependencies": {
-    "prettier": "^1.19.1"
+    "eslint": "^6.8.0",
+    "eslint-plugin-react": "^7.18.3",
+    "husky": "^4.2.3",
+    "lint-staged": "^10.0.8",
+    "standard": "^14.3.1",
+    "stylelint": "^13.2.0",
+    "stylelint-config-recommended": "^3.0.0",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-processor-styled-components": "^1.10.0"
   },
   "keywords": [
     "gatsby"
@@ -30,17 +41,68 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "format": "standard --fix",
     "start": "npm run develop",
+    "lint:style": "stylelint",
+    "lint": "standard",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  "lint-staged": {
+    "./src/**/*.js": "npm run lint",
+    "./src/**/*.styles.js": "npm run lint:style"
+  },
+  "stylelint": {
+    "processors": [
+      "stylelint-processor-styled-components"
+    ],
+    "extends": [
+      "stylelint-config-standard",
+      "stylelint-config-recommended",
+      "stylelint-config-styled-components"
+    ],
+    "rules": {
+      "at-rule-no-unknown": [
+        true,
+        {
+          "ignoreAtRules": [
+            "extends"
+          ]
+        }
+      ],
+      "value-keyword-case": null
+    }
+  },
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "extends": [
+      "eslint:recommended",
+      "plugin:react/recommended",
+      "standard",
+      "standard-jsx"
+    ],
+    "env": {
+      "browser": true,
+      "jest": true
+    },
+    "settings": {
+      "react": {
+        "version": "detect"
+      }
+    }
+  },
+  "standard": {
+    "parser": "babel-eslint",
+    "env": [
+      "mocha",
+      "jest",
+      "browser"
+    ]
   }
 }
