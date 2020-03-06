@@ -2,9 +2,9 @@ import React from 'react'
 
 import * as S from './Button.styles'
 
-const Button = ({ primary, secundary, tertiary, children }) => {
+const Button = ({ primary, secundary, tertiary, onClick, children }) => {
   return (
-    <S.Button primary={primary} secundary={secundary} tertiary={tertiary}>
+    <S.Button onClick={onClick} primary={primary} secundary={secundary} tertiary={tertiary}>
       {children}
     </S.Button>
   )
