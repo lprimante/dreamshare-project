@@ -5,7 +5,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 
 import favicon from '../../images/favicon.ico'
 
-function Seo ({ description, lang, meta, title }) {
+function Head ({ description, lang, meta, title }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -71,17 +71,17 @@ function Seo ({ description, lang, meta, title }) {
   )
 }
 
-Seo.defaultProps = {
+Head.defaultProps = {
   lang: 'en',
   meta: [],
   description: ''
 }
 
-Seo.propTypes = {
+Head.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired
 }
 
-export default Seo
+export default Head

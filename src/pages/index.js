@@ -1,14 +1,14 @@
 import React from 'react'
 
 import Layout from '../modules/Layout'
-import Seo from '../components/Seo'
+import Head from '../components/Head'
 import About from '../modules/About'
 import MeetPartners from '../modules/MeetPartners'
 import SearchPartner from '../modules/SearchPartner'
 
 const IndexPage = () => (
   <Layout>
-    <Seo title='Home' />
+    <Head title='Home' />
     <About />
     <MeetPartners />
     <SearchPartner />
