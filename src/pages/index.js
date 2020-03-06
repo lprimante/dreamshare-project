@@ -1,11 +1,17 @@
 import React from 'react'
 
-import Layout from '../components/Layout'
-import SEO from '../components/SEO'
+import Layout from '../modules/Layout'
+import Seo from '../components/Seo'
+import About from '../modules/About'
+import MeetPartners from '../modules/MeetPartners'
+import SearchPartner from '../modules/SearchPartner'
 
 const IndexPage = () => (
   <Layout>
-    <SEO title='Home' />
+    <Seo title='Home' />
+    <About />
+    <MeetPartners />
+    <SearchPartner />
   </Layout>
 )
 
