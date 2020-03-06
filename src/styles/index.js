@@ -1,8 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
 
 const globalStyles = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
-
   *,
   *::after,
   *::before {
@@ -11,10 +9,29 @@ const globalStyles = createGlobalStyle`
     box-sizing: border-box;
   }
 
+  a {
+    text-decoration: none;
+  }
+
+  a:visited {
+    color: var(--color-white);
+  }
+
+  ul, li {
+    list-style: none;
+  }
+
+  button {
+    font-size: var(--font-size-S);
+    background: none;
+    border: 0;
+  }
+
   :root {
     --font-size-S: 16px;
     --font-size-M: 18px;
     --font-size-L: 22px;
+    --font-size-XL: 32px;
     --font-weight-normal: 400;
     --font-weight-bold: 700;
     --color-sun-yellow: #F9D423;
@@ -37,6 +54,6 @@ const globalStyles = createGlobalStyle`
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
   }
-`;
+`
 
 export default globalStyles
