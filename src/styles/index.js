@@ -28,6 +28,7 @@ const globalStyles = createGlobalStyle`
   }
 
   :root {
+    --font-size-XS: 14px;
     --font-size-S: 16px;
     --font-size-M: 18px;
     --font-size-L: 22px;

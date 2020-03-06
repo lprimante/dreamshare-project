@@ -10,6 +10,7 @@ const GalleryItem = ({ index, imgName, buttonContent, title, subtitle }) =>
   <Slide index={index}>
     <S.WrapperImage>
       <Image imgName={imgName} />
+      <S.OverlayImage />
       <S.WrapperText>
         <Button primary>{buttonContent}</Button>
         <h3>{title}</h3>
